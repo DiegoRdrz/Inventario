@@ -16,5 +16,10 @@ namespace Inventario.Vistas
         {
             InitializeComponent();
         }
+
+        private void PrincipalFormulario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
