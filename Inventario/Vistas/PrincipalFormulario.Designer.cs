@@ -176,28 +176,30 @@
             this.btnVender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnVender.Image = ((System.Drawing.Image)(resources.GetObject("btnVender.Image")));
             this.btnVender.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVender.Location = new System.Drawing.Point(12, 133);
+            this.btnVender.Location = new System.Drawing.Point(1, 134);
             this.btnVender.Name = "btnVender";
-            this.btnVender.Size = new System.Drawing.Size(238, 31);
+            this.btnVender.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnVender.Size = new System.Drawing.Size(250, 50);
             this.btnVender.TabIndex = 1;
             this.btnVender.Text = "Vender";
+            this.btnVender.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVender.UseVisualStyleBackColor = true;
             this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(131)))), ((int)(((byte)(255)))));
-            this.panel1.Location = new System.Drawing.Point(0, 133);
+            this.panel1.Location = new System.Drawing.Point(0, 182);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(13, 31);
+            this.panel1.Size = new System.Drawing.Size(251, 2);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(131)))), ((int)(((byte)(255)))));
-            this.panel2.Location = new System.Drawing.Point(0, 187);
+            this.panel2.Location = new System.Drawing.Point(0, 232);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(13, 31);
+            this.panel2.Size = new System.Drawing.Size(251, 2);
             this.panel2.TabIndex = 2;
             // 
             // btnInventario
@@ -209,20 +211,22 @@
             this.btnInventario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnInventario.Image = ((System.Drawing.Image)(resources.GetObject("btnInventario.Image")));
             this.btnInventario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInventario.Location = new System.Drawing.Point(12, 187);
+            this.btnInventario.Location = new System.Drawing.Point(1, 184);
             this.btnInventario.Name = "btnInventario";
-            this.btnInventario.Size = new System.Drawing.Size(238, 31);
+            this.btnInventario.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnInventario.Size = new System.Drawing.Size(250, 50);
             this.btnInventario.TabIndex = 3;
             this.btnInventario.Text = "Inventario";
+            this.btnInventario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInventario.UseVisualStyleBackColor = true;
             this.btnInventario.Click += new System.EventHandler(this.btnInventario_Click);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(131)))), ((int)(((byte)(255)))));
-            this.panel3.Location = new System.Drawing.Point(0, 241);
+            this.panel3.Location = new System.Drawing.Point(0, 282);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(13, 31);
+            this.panel3.Size = new System.Drawing.Size(251, 2);
             this.panel3.TabIndex = 4;
             // 
             // btnProveedores
@@ -234,20 +238,22 @@
             this.btnProveedores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnProveedores.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedores.Image")));
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedores.Location = new System.Drawing.Point(12, 241);
+            this.btnProveedores.Location = new System.Drawing.Point(1, 234);
             this.btnProveedores.Name = "btnProveedores";
-            this.btnProveedores.Size = new System.Drawing.Size(238, 31);
+            this.btnProveedores.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnProveedores.Size = new System.Drawing.Size(248, 50);
             this.btnProveedores.TabIndex = 5;
             this.btnProveedores.Text = "Proveedores";
+            this.btnProveedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProveedores.UseVisualStyleBackColor = true;
             this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(131)))), ((int)(((byte)(255)))));
-            this.panel4.Location = new System.Drawing.Point(0, 295);
+            this.panel4.Location = new System.Drawing.Point(0, 384);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(13, 31);
+            this.panel4.Size = new System.Drawing.Size(251, 2);
             this.panel4.TabIndex = 6;
             // 
             // btnClientes
@@ -259,20 +265,22 @@
             this.btnClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(12, 295);
+            this.btnClientes.Location = new System.Drawing.Point(1, 284);
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(238, 31);
+            this.btnClientes.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnClientes.Size = new System.Drawing.Size(250, 50);
             this.btnClientes.TabIndex = 7;
             this.btnClientes.Text = "Clientes";
+            this.btnClientes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnClientes.UseVisualStyleBackColor = true;
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(131)))), ((int)(((byte)(255)))));
-            this.panel5.Location = new System.Drawing.Point(0, 349);
+            this.panel5.Location = new System.Drawing.Point(0, 332);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(13, 31);
+            this.panel5.Size = new System.Drawing.Size(251, 2);
             this.panel5.TabIndex = 8;
             // 
             // Historial
@@ -284,11 +292,13 @@
             this.Historial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.Historial.Image = ((System.Drawing.Image)(resources.GetObject("Historial.Image")));
             this.Historial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Historial.Location = new System.Drawing.Point(12, 349);
+            this.Historial.Location = new System.Drawing.Point(1, 334);
             this.Historial.Name = "Historial";
-            this.Historial.Size = new System.Drawing.Size(238, 31);
+            this.Historial.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.Historial.Size = new System.Drawing.Size(250, 50);
             this.Historial.TabIndex = 9;
             this.Historial.Text = "Historial";
+            this.Historial.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Historial.UseVisualStyleBackColor = true;
             this.Historial.Click += new System.EventHandler(this.Historial_Click);
             // 
