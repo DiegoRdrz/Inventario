@@ -1,0 +1,11 @@
+C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.csproj.AssemblyReference.cache
+C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.csproj.SuggestedBindingRedirects.cache
+C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.Properties.Resources.resources
+C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.Vistas.PrincipalFormulario.resources
+C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.csproj.GenerateResource.cache
+C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.csproj.CoreCompileInputs.cache
+C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\bin\Debug\Inventario.exe.config
+C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\bin\Debug\Inventario.exe
+C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\bin\Debug\Inventario.pdb
+C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.exe
+C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.pdb
