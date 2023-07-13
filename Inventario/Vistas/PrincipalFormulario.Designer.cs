@@ -125,7 +125,7 @@
             this.btnMaximizar.Location = new System.Drawing.Point(1119, 4);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(25, 25);
-            this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnMaximizar.TabIndex = 1;
             this.btnMaximizar.TabStop = false;
             this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
@@ -138,7 +138,7 @@
             this.btnRestaurar.Location = new System.Drawing.Point(1119, 4);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(25, 25);
-            this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnRestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.btnRestaurar.TabIndex = 1;
             this.btnRestaurar.TabStop = false;
             this.btnRestaurar.Visible = false;
@@ -309,20 +309,21 @@
             this.lblTitulo.ForeColor = System.Drawing.Color.Black;
             this.lblTitulo.Location = new System.Drawing.Point(12, 4);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(97, 25);
+            this.lblTitulo.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.lblTitulo.Size = new System.Drawing.Size(117, 25);
             this.lblTitulo.TabIndex = 0;
             this.lblTitulo.Text = "Inventario";
             // 
             // lblLogo
             // 
             this.lblLogo.AutoSize = true;
-            this.lblLogo.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogo.Font = new System.Drawing.Font("Nirmala UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.lblLogo.Location = new System.Drawing.Point(67, 85);
+            this.lblLogo.Location = new System.Drawing.Point(49, 85);
             this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(114, 21);
+            this.lblLogo.Size = new System.Drawing.Size(150, 30);
             this.lblLogo.TabIndex = 0;
-            this.lblLogo.Text = "inventoryStock";
+            this.lblLogo.Text = "InventoryStock";
             // 
             // PrincipalFormulario
             // 
