@@ -10,26 +10,19 @@ using System.Windows.Forms;
 
 namespace Inventario.Vistas
 {
-    public partial class FormularioInventario : Form
+    public partial class FormularioAgregarProveedor : Form
     {
-        public PrincipalFormulario PrincipalFormulario { get; set; }
-        public FormularioInventario()
+        private Form formularioAnterior;
+        public FormularioAgregarProveedor(Form formularioAnterior)
         {
             InitializeComponent();
+            this.formularioAnterior = formularioAnterior;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            formularioAnterior.Show();
             this.Close();
         }
-
-        private void btnNuevo_Click(object sender, EventArgs e)
-        {
-            if (PrincipalFormulario != null)
-            {
-                PrincipalFormulario.abrirFormularioCrear(new FormularioAgregarProducto(this));
-            }
-        }
-
     }
 }

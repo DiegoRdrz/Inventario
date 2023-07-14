@@ -1,6 +1,6 @@
 ﻿namespace Inventario.Vistas
 {
-    partial class FormularioClientes
+    partial class FormularioAgregarProducto
     {
         /// <summary>
         /// Required designer variable.
@@ -28,52 +28,40 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblClientes = new System.Windows.Forms.Label();
-            this.btnNuevo = new System.Windows.Forms.Button();
+            this.lblNuevoProducto = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lblClientes
+            // lblNuevoProducto
             // 
-            this.lblClientes.AutoSize = true;
-            this.lblClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientes.Location = new System.Drawing.Point(12, 9);
-            this.lblClientes.Name = "lblClientes";
-            this.lblClientes.Size = new System.Drawing.Size(90, 25);
-            this.lblClientes.TabIndex = 0;
-            this.lblClientes.Text = "Clientes";
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Location = new System.Drawing.Point(12, 56);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
-            this.btnNuevo.TabIndex = 1;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            this.lblNuevoProducto.AutoSize = true;
+            this.lblNuevoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNuevoProducto.Location = new System.Drawing.Point(12, 9);
+            this.lblNuevoProducto.Name = "lblNuevoProducto";
+            this.lblNuevoProducto.Size = new System.Drawing.Size(166, 25);
+            this.lblNuevoProducto.TabIndex = 0;
+            this.lblNuevoProducto.Text = "Nuevo Producto";
             // 
             // btnCerrar
             // 
             this.btnCerrar.Location = new System.Drawing.Point(862, 580);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(75, 23);
-            this.btnCerrar.TabIndex = 2;
+            this.btnCerrar.TabIndex = 1;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // FormularioClientes
+            // FormularioAgregarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 615);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.lblClientes);
+            this.Controls.Add(this.lblNuevoProducto);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormularioClientes";
-            this.Text = "Clientes";
+            this.Name = "FormularioAgregarProducto";
+            this.Text = "FormularioAgregarProducto";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -81,8 +69,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblClientes;
-        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Label lblNuevoProducto;
         private System.Windows.Forms.Button btnCerrar;
     }
 }

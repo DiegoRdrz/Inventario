@@ -59,13 +59,24 @@ namespace Inventario.Vistas
         }
 
         private Form formularioActivo = null;
-        private void abrirFormulario(Form formulario)
-        {
+        public void abrirFormulario(Form formulario)
+        {   
             if(formularioActivo != null)
             {
                 formularioActivo.Close();
             }
             formularioActivo = formulario;
+            formulario.TopLevel = false;
+            formulario.FormBorderStyle = FormBorderStyle.None;
+            formulario.Dock = DockStyle.Fill;
+            PanelPrincipal.Controls.Add(formulario);
+            PanelPrincipal.Tag = formulario;
+            formulario.BringToFront();
+            formulario.Show();
+        }
+        public void abrirFormularioCrear(Form formulario)
+        {
+            formularioActivo.Hide();
             formulario.TopLevel = false;
             formulario.FormBorderStyle = FormBorderStyle.None;
             formulario.Dock = DockStyle.Fill;
@@ -82,17 +93,26 @@ namespace Inventario.Vistas
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
-            abrirFormulario(new FormularioInventario());
+            FormularioInventario formularioInventario = new FormularioInventario();
+            formularioInventario.PrincipalFormulario = this; // Pasar la instancia existente de PrincipalFormulario
+
+            abrirFormulario(formularioInventario);
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
-            abrirFormulario(new FormularioProveedores());
+            FormularioProveedores formularioProveedores = new FormularioProveedores();
+            formularioProveedores.PrincipalFormulario = this; // Pasar la instancia existente de PrincipalFormulario
+
+            abrirFormulario(formularioProveedores);
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            abrirFormulario(new FormularioClientes());
+            FormularioClientes formularioClientes = new FormularioClientes();
+            formularioClientes.PrincipalFormulario = this; // Pasar la instancia existente de PrincipalFormulario
+
+            abrirFormulario(formularioClientes);
         }
 
         private void Historial_Click(object sender, EventArgs e)

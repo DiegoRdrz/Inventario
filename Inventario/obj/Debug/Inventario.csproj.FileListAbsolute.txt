@@ -11,3 +11,9 @@ C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.exe
 C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.pdb
 C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.Vistas.FormularioInventario.resources
 C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.Vistas.FormularioVender.resources
+C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.Vistas.FormularioAgregarCliente.resources
+C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.Vistas.FormularioAgregarProducto.resources
+C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.Vistas.FormularioAgregarProveedor.resources
+C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.Vistas.FormularioClientes.resources
+C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.Vistas.FormularioHistorial.resources
+C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.Vistas.FormularioProveedores.resources

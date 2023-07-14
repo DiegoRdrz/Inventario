@@ -1,6 +1,6 @@
 ﻿namespace Inventario.Vistas
 {
-    partial class FormularioClientes
+    partial class FormularioAgregarCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -28,30 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblClientes = new System.Windows.Forms.Label();
-            this.btnNuevo = new System.Windows.Forms.Button();
+            this.lblNuevoCliente = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lblClientes
+            // lblNuevoCliente
             // 
-            this.lblClientes.AutoSize = true;
-            this.lblClientes.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblClientes.Location = new System.Drawing.Point(12, 9);
-            this.lblClientes.Name = "lblClientes";
-            this.lblClientes.Size = new System.Drawing.Size(90, 25);
-            this.lblClientes.TabIndex = 0;
-            this.lblClientes.Text = "Clientes";
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Location = new System.Drawing.Point(12, 56);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(75, 23);
-            this.btnNuevo.TabIndex = 1;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            this.lblNuevoCliente.AutoSize = true;
+            this.lblNuevoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNuevoCliente.Location = new System.Drawing.Point(12, 9);
+            this.lblNuevoCliente.Name = "lblNuevoCliente";
+            this.lblNuevoCliente.Size = new System.Drawing.Size(147, 25);
+            this.lblNuevoCliente.TabIndex = 1;
+            this.lblNuevoCliente.Text = "Nuevo Cliente";
             // 
             // btnCerrar
             // 
@@ -63,26 +52,23 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // FormularioClientes
+            // FormularioAgregarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 615);
             this.Controls.Add(this.btnCerrar);
-            this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.lblClientes);
+            this.Controls.Add(this.lblNuevoCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormularioClientes";
-            this.Text = "Clientes";
+            this.Name = "FormularioAgregarCliente";
+            this.Text = "FormularioAgregarCliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblClientes;
-        private System.Windows.Forms.Button btnNuevo;
+        private System.Windows.Forms.Label lblNuevoCliente;
         private System.Windows.Forms.Button btnCerrar;
     }
 }
