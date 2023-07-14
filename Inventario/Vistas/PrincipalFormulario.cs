@@ -58,29 +58,46 @@ namespace Inventario.Vistas
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        private Form formularioActivo = null;
+        private void abrirFormulario(Form formulario)
+        {
+            if(formularioActivo != null)
+            {
+                formularioActivo.Close();
+            }
+            formularioActivo = formulario;
+            formulario.TopLevel = false;
+            formulario.FormBorderStyle = FormBorderStyle.None;
+            formulario.Dock = DockStyle.Fill;
+            PanelPrincipal.Controls.Add(formulario);
+            PanelPrincipal.Tag = formulario;
+            formulario.BringToFront();
+            formulario.Show();
+        }
+
         private void btnVender_Click(object sender, EventArgs e)
         {
-
+            abrirFormulario(new FormularioVender());
         }
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
-
+            abrirFormulario(new FormularioInventario());
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
-
+            abrirFormulario(new FormularioProveedores());
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-
+            abrirFormulario(new FormularioClientes());
         }
 
         private void Historial_Click(object sender, EventArgs e)
         {
-
+            abrirFormulario(new FormularioHistorial());
         }
 
         private void MenuVertical_Paint(object sender, PaintEventArgs e)

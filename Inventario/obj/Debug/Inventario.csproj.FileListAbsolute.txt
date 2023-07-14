@@ -9,3 +9,5 @@ C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\bin\Debug\Inventario.exe
 C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\bin\Debug\Inventario.pdb
 C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.exe
 C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.pdb
+C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.Vistas.FormularioInventario.resources
+C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.Vistas.FormularioVender.resources

@@ -51,6 +51,36 @@
     <Compile Include="main.cs" />
     <Compile Include="Modelos\ProductosModelo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\FormularioClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FormularioClientes.Designer.cs">
+      <DependentUpon>FormularioClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FormularioHistorial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FormularioHistorial.Designer.cs">
+      <DependentUpon>FormularioHistorial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FormularioInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FormularioInventario.Designer.cs">
+      <DependentUpon>FormularioInventario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FormularioProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FormularioProveedores.Designer.cs">
+      <DependentUpon>FormularioProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\FormularioVender.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FormularioVender.Designer.cs">
+      <DependentUpon>FormularioVender.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\PrincipalFormulario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +96,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vistas\FormularioClientes.resx">
+      <DependentUpon>FormularioClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FormularioHistorial.resx">
+      <DependentUpon>FormularioHistorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FormularioInventario.resx">
+      <DependentUpon>FormularioInventario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FormularioProveedores.resx">
+      <DependentUpon>FormularioProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FormularioVender.resx">
+      <DependentUpon>FormularioVender.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\PrincipalFormulario.resx">
       <DependentUpon>PrincipalFormulario.cs</DependentUpon>
     </EmbeddedResource>
