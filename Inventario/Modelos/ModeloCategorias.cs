@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace Inventario.Modelos
 {
-    internal class ProductosModelo
+    internal class ModeloCategorias
     {
+        public int ID { get; set; }
+        public string Nombre { get; set; }
+        public string Descripcion { get; set; }
     }
 }

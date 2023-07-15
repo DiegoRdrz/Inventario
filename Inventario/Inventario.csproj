@@ -46,10 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BD\BD.cs" />
-    <Compile Include="Controladores\ProductosControlador.cs" />
+    <Compile Include="DataBase\BD.cs" />
+    <Compile Include="Controladores\ControladorCategorias.cs" />
+    <Compile Include="Controladores\ControladorClientes.cs" />
+    <Compile Include="Controladores\ControladorProductos.cs" />
+    <Compile Include="Controladores\ControladorProveedores.cs" />
+    <Compile Include="Controladores\ControladorVentas.cs" />
     <Compile Include="main.cs" />
-    <Compile Include="Modelos\ProductosModelo.cs" />
+    <Compile Include="Modelos\ModeloCategorias.cs" />
+    <Compile Include="Modelos\ModeloClientes.cs" />
+    <Compile Include="Modelos\ModeloProductos.cs" />
+    <Compile Include="Modelos\ModeloProveedores.cs" />
+    <Compile Include="Modelos\ModeloVentas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vistas\FormularioAgregarCliente.cs">
       <SubType>Form</SubType>
