@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Inventario.Controladores
 {
@@ -14,7 +15,8 @@ namespace Inventario.Controladores
 
         public ControladorCategorias()
         {
-            db = new BD("localhost", "inventario", "admin", "");
+            db = new BD("localhost", "3306", "inventario", "root", "1234");
+
         }
 
         public void CrearCategorias(ModeloCategorias categoria)

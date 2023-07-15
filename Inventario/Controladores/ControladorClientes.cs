@@ -14,7 +14,7 @@ namespace Inventario.Controladores
 
         public ControladorClientes()
         {
-            db = new BD("localhost", "inventario", "admin", "");
+            db = new BD("localhost", "3306", "inventario", "root", "1234");
         }
 
         public void CrearCliente(ModeloClientes cliente)

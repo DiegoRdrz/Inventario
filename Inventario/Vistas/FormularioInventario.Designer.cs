@@ -31,6 +31,7 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.lblInventario = new System.Windows.Forms.Label();
+            this.btnNuevaCategoria = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCerrar
@@ -63,11 +64,22 @@
             this.lblInventario.TabIndex = 2;
             this.lblInventario.Text = "Inventario";
             // 
+            // btnNuevaCategoria
+            // 
+            this.btnNuevaCategoria.Location = new System.Drawing.Point(104, 55);
+            this.btnNuevaCategoria.Name = "btnNuevaCategoria";
+            this.btnNuevaCategoria.Size = new System.Drawing.Size(135, 23);
+            this.btnNuevaCategoria.TabIndex = 3;
+            this.btnNuevaCategoria.Text = "Nueva Categoria";
+            this.btnNuevaCategoria.UseVisualStyleBackColor = true;
+            this.btnNuevaCategoria.Click += new System.EventHandler(this.btnNuevaCategoria_Click);
+            // 
             // FormularioInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 615);
+            this.Controls.Add(this.btnNuevaCategoria);
             this.Controls.Add(this.lblInventario);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnCerrar);
@@ -84,5 +96,6 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label lblInventario;
+        private System.Windows.Forms.Button btnNuevaCategoria;
     }
 }

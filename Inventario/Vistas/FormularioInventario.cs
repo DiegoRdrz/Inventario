@@ -31,5 +31,12 @@ namespace Inventario.Vistas
             }
         }
 
+        private void btnNuevaCategoria_Click(object sender, EventArgs e)
+        {
+            if (PrincipalFormulario != null)
+            {
+                PrincipalFormulario.abrirFormularioCrear(new FormularioAgregarCategoria(this));
+            }
+        }
     }
 }

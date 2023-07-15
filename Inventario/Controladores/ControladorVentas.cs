@@ -15,7 +15,7 @@ namespace Inventario.Controladores
 
         public ControladorVentas()
         {
-            db = new BD("localhost", "inventario", "admin", "");
+            db = new BD("localhost", "3306", "inventario", "root", "1234");
         }
 
         public void CrearVenta(ModeloVentas venta)
