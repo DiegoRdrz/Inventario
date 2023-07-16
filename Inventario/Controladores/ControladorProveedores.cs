@@ -21,7 +21,7 @@ namespace Inventario.Controladores
         {   
             Dictionary<string, object> valores = new Dictionary<string, object>();
             valores.Add("Nombre", proveedor.Nombre);
-            valores.Add("Dirreccion", proveedor.Direccion);
+            valores.Add("Direccion", proveedor.Direccion);
             valores.Add("Telefono",proveedor.Telefono);
             valores.Add("Correo",proveedor.correo);
 
@@ -37,7 +37,7 @@ namespace Inventario.Controladores
         {
             Dictionary<string, object> valores = new Dictionary<string, object>();
             valores.Add("Nombre", proveedor.Nombre);
-            valores.Add("Dirreccion", proveedor.Direccion);
+            valores.Add("Direccion", proveedor.Direccion);
             valores.Add("Telefono", proveedor.Telefono);
             valores.Add("Correo", proveedor.correo);
 

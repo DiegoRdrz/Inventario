@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
@@ -44,7 +43,6 @@ public BD(string servidor, string puerto, string baseDeDatos, string usuario, st
                 }
 
                 consulta = consulta.TrimEnd(',', ' ') + ")";
-                MessageBox.Show(consulta, "alerta", MessageBoxButtons.OK);
                 using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                 {
                     conexion.Open();
