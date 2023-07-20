@@ -19,17 +19,24 @@ namespace Inventario.Vistas
         ControladorClientes Ccliente;
         ModeloClientes cliente;
         Form formularioAnterior;
+        FormularioClientes formularioClientes;
+
         public FormularioAgregarCliente(Form formularioAnterior)
         {
             InitializeComponent();
             this.formularioAnterior = formularioAnterior;
             cliente = new ModeloClientes();
             Ccliente = new ControladorClientes();
+            formularioClientes = formularioAnterior as FormularioClientes;
+
+
         }
         public FormularioAgregarCliente(Form formularioAnterior, int ID, string nombre, long telefono)
         {
             InitializeComponent();
             this.formularioAnterior = formularioAnterior;
+            formularioClientes = formularioAnterior as FormularioClientes;
+
             cliente = new ModeloClientes();
             cliente.ID = ID;
             cliente.Nombre = nombre;
@@ -38,11 +45,13 @@ namespace Inventario.Vistas
 
             txtNombre.Text = nombre;
             txtTelefono.Text = telefono.ToString();
+
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             formularioAnterior.Show();
+            formularioClientes.CargarTabla();
             this.Close();
         }
 
@@ -56,6 +65,7 @@ namespace Inventario.Vistas
                 Ccliente.ActualizarCliente(cliente);
 
             formularioAnterior.Show();
+            formularioClientes.CargarTabla();
             this.Close();
         }
 

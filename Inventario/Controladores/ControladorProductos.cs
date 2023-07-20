@@ -14,7 +14,7 @@ namespace Inventario.Controladores
 
         public ControladorProductos()
         {
-            db = new BD("localhost", "3306", "inventario", "root", "1234");
+            db = new BD("localhost", "3306", "inventario", "root", "");
         }
 
         public void CrearProducto(ModeloProductos producto)

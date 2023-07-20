@@ -44,3 +44,4 @@ C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\bin\Debug\System.Numerics
 C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.csproj.CopyComplete
+C:\Users\Diego Rdrz\source\repos\Inventario\Inventario\obj\Debug\Inventario.Vistas.FormularioCategorias.resources

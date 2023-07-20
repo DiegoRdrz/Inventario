@@ -62,6 +62,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormularioHistorial";
             this.Text = "FormularioHistorial";
+            this.Load += new System.EventHandler(this.FormularioHistorial_Load);
+            this.Shown += new System.EventHandler(this.FormularioHistorial_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

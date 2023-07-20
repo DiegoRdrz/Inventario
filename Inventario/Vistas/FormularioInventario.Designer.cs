@@ -31,7 +31,10 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.lblInventario = new System.Windows.Forms.Label();
-            this.btnNuevaCategoria = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCerrar
@@ -64,28 +67,51 @@
             this.lblInventario.TabIndex = 2;
             this.lblInventario.Text = "Inventario";
             // 
-            // btnNuevaCategoria
+            // btnEditar
             // 
-            this.btnNuevaCategoria.Location = new System.Drawing.Point(104, 55);
-            this.btnNuevaCategoria.Name = "btnNuevaCategoria";
-            this.btnNuevaCategoria.Size = new System.Drawing.Size(135, 23);
-            this.btnNuevaCategoria.TabIndex = 3;
-            this.btnNuevaCategoria.Text = "Nueva Categoria";
-            this.btnNuevaCategoria.UseVisualStyleBackColor = true;
-            this.btnNuevaCategoria.Click += new System.EventHandler(this.btnNuevaCategoria_Click);
+            this.btnEditar.Location = new System.Drawing.Point(108, 55);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(75, 23);
+            this.btnEditar.TabIndex = 3;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(215, 55);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // dgvProductos
+            // 
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Location = new System.Drawing.Point(12, 101);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.Size = new System.Drawing.Size(925, 473);
+            this.dgvProductos.TabIndex = 6;
             // 
             // FormularioInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(949, 615);
-            this.Controls.Add(this.btnNuevaCategoria);
+            this.Controls.Add(this.dgvProductos);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.lblInventario);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnCerrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormularioInventario";
             this.Text = "FormularioInventario";
+            this.Load += new System.EventHandler(this.FormularioInventario_Load);
+            this.Shown += new System.EventHandler(this.FormularioInventario_Shown);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -96,6 +122,8 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label lblInventario;
-        private System.Windows.Forms.Button btnNuevaCategoria;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.DataGridView dgvProductos;
     }
 }

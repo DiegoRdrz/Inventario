@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Data;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using Inventario.Modelos;
 
 namespace Inventario
 {
@@ -153,5 +155,135 @@ public BD(string servidor, string puerto, string baseDeDatos, string usuario, st
                 conexion.Close();
             }
         }
+
+
+        #region Consultas Personalizadas
+        public List<string> ObtenerNombresProveedores()
+        {
+            List<string> nombresProveedores = new List<string>();
+
+            try
+            {
+                string consulta = "SELECT Nombre FROM proveedores";
+                using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
+                {
+                    conexion.Open();
+                    using (MySqlDataReader lector = comando.ExecuteReader())
+                    {
+                        
+                        while (lector.Read())
+                        {
+                            string nombreProveedor = lector["Nombre"].ToString();
+                            nombresProveedores.Add(nombreProveedor);
+                        }
+                        
+                    }
+                    conexion.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones, puedes mostrar un mensaje de error, log, etc.
+                MessageBox.Show($"Error al obtener nombres de proveedores: {ex.Message}", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return nombresProveedores;
+        }
+
+
+        public int ObtenerProveedorPorNombre(string nombreProveedor)
+        {
+            int idProveedor = -1; // Valor por defecto en caso de que no se encuentre el proveedor
+
+            try
+            {
+                string consulta = "SELECT ID FROM proveedores WHERE Nombre = @nombre";
+                using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
+                {
+                    conexion.Open();
+                    comando.Parameters.AddWithValue("@nombre", nombreProveedor);
+
+                    object result = comando.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        idProveedor = Convert.ToInt32(result);
+                    }
+
+                    conexion.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones, puedes mostrar un mensaje de error, log, etc.
+                MessageBox.Show($"Error al obtener ID del proveedor por nombre: {ex.Message}", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return idProveedor;
+        }
+
+
+
+
+        public List<string> ObtenerNombresCategorias()
+        {
+            List<string> nombresCategorias = new List<string>();
+
+            try
+            {
+                string consulta = "SELECT Nombre FROM categorias";
+                using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
+                {
+                    conexion.Open();
+                    using (MySqlDataReader lector = comando.ExecuteReader())
+                    {
+                        while (lector.Read())
+                        {
+                            string nombreProveedor = lector["Nombre"].ToString();
+                            nombresCategorias.Add(nombreProveedor);
+                        }
+                    }
+                    conexion.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones, puedes mostrar un mensaje de error, log, etc.
+                MessageBox.Show($"Error al obtener nombres de categorias: {ex.Message}", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return nombresCategorias;
+        }
+        public int ObtenerCategoriaPorNombre(string nombreCategoria)
+        {
+            int idCategoria = -1; // Valor por defecto en caso de que no se encuentre el proveedor
+
+            try
+            {
+                string consulta = "SELECT ID FROM categorias WHERE Nombre = @nombre";
+                using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
+                {
+                    conexion.Open();
+                    comando.Parameters.AddWithValue("@nombre", nombreCategoria);
+
+                    object result = comando.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        idCategoria = Convert.ToInt32(result);
+                    }
+
+                    conexion.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones, puedes mostrar un mensaje de error, log, etc.
+                MessageBox.Show($"Error al obtener ID del proveedor por nombre: {ex.Message}", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return idCategoria;
+        }
+        #endregion
     }
 }

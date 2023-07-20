@@ -63,6 +63,7 @@ namespace Inventario.Vistas
         {   
             if(formularioActivo != null)
             {
+                restaurarColorBtns(0);
                 formularioActivo.Close();
             }
             formularioActivo = formulario;
@@ -86,43 +87,97 @@ namespace Inventario.Vistas
             formulario.Show();
         }
 
+        public void restaurarColorBtns(int x)
+        {
+            switch (x) 
+            {
+                case 1:
+                    btnVender.BackColor = ColorTranslator.FromHtml("#C5C5C5");
+                    break;
+                case 2:
+                    btnInventario.BackColor = ColorTranslator.FromHtml("#C5C5C5");
+                    break;
+                case 3:
+                    btnClientes.BackColor = ColorTranslator.FromHtml("#C5C5C5");
+                    break;
+                case 4:
+                    btnProveedores.BackColor = ColorTranslator.FromHtml("#C5C5C5");
+                    break;
+                case 5:
+                    btnHistorial.BackColor = ColorTranslator.FromHtml("#C5C5C5");
+                    break;
+                case 6:
+                    btnCategorias.BackColor = ColorTranslator.FromHtml("#C5C5C5");
+                    break;
+                case 0:
+                    btnVender.BackColor = ColorTranslator.FromHtml("#C5C5C5");
+                    btnInventario.BackColor = ColorTranslator.FromHtml("#C5C5C5");
+                    btnClientes.BackColor = ColorTranslator.FromHtml("#C5C5C5");
+                    btnProveedores.BackColor = ColorTranslator.FromHtml("#C5C5C5");
+                    btnHistorial.BackColor = ColorTranslator.FromHtml("#C5C5C5");
+                    btnCategorias.BackColor = ColorTranslator.FromHtml("#C5C5C5");
+                    break;
+            }
+            
+        }
+
         private void btnVender_Click(object sender, EventArgs e)
         {
-            abrirFormulario(new FormularioVender());
+            FormularioVender formularioVender = new FormularioVender();
+            formularioVender.PrincipalFormulario = this;
+            abrirFormulario(formularioVender);
+            btnVender.BackColor = ColorTranslator.FromHtml("#8685EF");
+
         }
 
         private void btnInventario_Click(object sender, EventArgs e)
         {
             FormularioInventario formularioInventario = new FormularioInventario();
             formularioInventario.PrincipalFormulario = this; // Pasar la instancia existente de PrincipalFormulario
-
             abrirFormulario(formularioInventario);
+            btnInventario.BackColor = ColorTranslator.FromHtml("#8685EF");
+
+        }
+
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            FormularioCategorias formularioCategorias = new FormularioCategorias();
+            formularioCategorias.PrincipalFormulario = this;
+            abrirFormulario(formularioCategorias);
+            btnCategorias.BackColor = ColorTranslator.FromHtml("#8685EF");
         }
 
         private void btnProveedores_Click(object sender, EventArgs e)
         {
             FormularioProveedores formularioProveedores = new FormularioProveedores();
             formularioProveedores.PrincipalFormulario = this; // Pasar la instancia existente de PrincipalFormulario
+            abrirFormulario(formularioProveedores); 
+            btnProveedores.BackColor = ColorTranslator.FromHtml("#8685EF");
 
-            abrirFormulario(formularioProveedores);
         }
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
             FormularioClientes formularioClientes = new FormularioClientes();
             formularioClientes.PrincipalFormulario = this; // Pasar la instancia existente de PrincipalFormulario
-
             abrirFormulario(formularioClientes);
+            btnClientes.BackColor = ColorTranslator.FromHtml("#8685EF");
+
         }
 
         private void Historial_Click(object sender, EventArgs e)
         {
-            abrirFormulario(new FormularioHistorial());
+            FormularioHistorial formularioHistorial = new FormularioHistorial();
+            formularioHistorial.PrincipalFormulario = this;
+            abrirFormulario(formularioHistorial);
+            btnHistorial.BackColor = ColorTranslator.FromHtml("#8685EF");
+
         }
 
         private void MenuVertical_Paint(object sender, PaintEventArgs e)
         {
 
         }
+
     }
 }

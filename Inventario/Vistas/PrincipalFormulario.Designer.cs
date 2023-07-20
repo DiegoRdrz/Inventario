@@ -49,6 +49,8 @@
             this.btnVender = new System.Windows.Forms.Button();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.PanelPrincipal = new System.Windows.Forms.Panel();
+            this.btnCategorias = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.BarraTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRestaurar)).BeginInit();
@@ -141,6 +143,8 @@
             // MenuVertical
             // 
             this.MenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.MenuVertical.Controls.Add(this.btnCategorias);
+            this.MenuVertical.Controls.Add(this.panel6);
             this.MenuVertical.Controls.Add(this.lblLogo);
             this.MenuVertical.Controls.Add(this.panel5);
             this.MenuVertical.Controls.Add(this.btnHistorial);
@@ -174,7 +178,7 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(131)))), ((int)(((byte)(255)))));
-            this.panel5.Location = new System.Drawing.Point(0, 332);
+            this.panel5.Location = new System.Drawing.Point(-1, 386);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(251, 2);
             this.panel5.TabIndex = 8;
@@ -188,7 +192,7 @@
             this.btnHistorial.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnHistorial.Image = ((System.Drawing.Image)(resources.GetObject("btnHistorial.Image")));
             this.btnHistorial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHistorial.Location = new System.Drawing.Point(1, 334);
+            this.btnHistorial.Location = new System.Drawing.Point(0, 388);
             this.btnHistorial.Name = "btnHistorial";
             this.btnHistorial.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnHistorial.Size = new System.Drawing.Size(250, 50);
@@ -201,7 +205,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(131)))), ((int)(((byte)(255)))));
-            this.panel4.Location = new System.Drawing.Point(0, 384);
+            this.panel4.Location = new System.Drawing.Point(-1, 438);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(251, 2);
             this.panel4.TabIndex = 6;
@@ -215,7 +219,7 @@
             this.btnClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnClientes.Image = ((System.Drawing.Image)(resources.GetObject("btnClientes.Image")));
             this.btnClientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClientes.Location = new System.Drawing.Point(1, 284);
+            this.btnClientes.Location = new System.Drawing.Point(0, 338);
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnClientes.Size = new System.Drawing.Size(250, 50);
@@ -228,7 +232,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(131)))), ((int)(((byte)(255)))));
-            this.panel3.Location = new System.Drawing.Point(0, 282);
+            this.panel3.Location = new System.Drawing.Point(-1, 336);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(251, 2);
             this.panel3.TabIndex = 4;
@@ -242,7 +246,7 @@
             this.btnProveedores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
             this.btnProveedores.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedores.Image")));
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedores.Location = new System.Drawing.Point(1, 234);
+            this.btnProveedores.Location = new System.Drawing.Point(0, 288);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
             this.btnProveedores.Size = new System.Drawing.Size(248, 50);
@@ -289,6 +293,7 @@
             // 
             // btnVender
             // 
+            this.btnVender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
             this.btnVender.FlatAppearance.BorderSize = 0;
             this.btnVender.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(131)))), ((int)(((byte)(255)))));
             this.btnVender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -303,7 +308,7 @@
             this.btnVender.TabIndex = 1;
             this.btnVender.Text = "Vender";
             this.btnVender.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnVender.UseVisualStyleBackColor = true;
+            this.btnVender.UseVisualStyleBackColor = false;
             this.btnVender.Click += new System.EventHandler(this.btnVender_Click);
             // 
             // imgLogo
@@ -324,6 +329,33 @@
             this.PanelPrincipal.Name = "PanelPrincipal";
             this.PanelPrincipal.Size = new System.Drawing.Size(949, 615);
             this.PanelPrincipal.TabIndex = 2;
+            // 
+            // btnCategorias
+            // 
+            this.btnCategorias.FlatAppearance.BorderSize = 0;
+            this.btnCategorias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(131)))), ((int)(((byte)(255)))));
+            this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategorias.Font = new System.Drawing.Font("Nirmala UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategorias.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.btnCategorias.Image = ((System.Drawing.Image)(resources.GetObject("btnCategorias.Image")));
+            this.btnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCategorias.Location = new System.Drawing.Point(1, 235);
+            this.btnCategorias.Name = "btnCategorias";
+            this.btnCategorias.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
+            this.btnCategorias.Size = new System.Drawing.Size(250, 50);
+            this.btnCategorias.TabIndex = 11;
+            this.btnCategorias.Text = "Categorias";
+            this.btnCategorias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCategorias.UseVisualStyleBackColor = true;
+            this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(131)))), ((int)(((byte)(255)))));
+            this.panel6.Location = new System.Drawing.Point(0, 285);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(251, 2);
+            this.panel6.TabIndex = 10;
             // 
             // PrincipalFormulario
             // 
@@ -372,5 +404,7 @@
         private System.Windows.Forms.Button btnClientes;
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.Label lblLogo;
+        private System.Windows.Forms.Button btnCategorias;
+        private System.Windows.Forms.Panel panel6;
     }
 }

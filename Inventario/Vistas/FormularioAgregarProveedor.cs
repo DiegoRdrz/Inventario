@@ -18,17 +18,20 @@ namespace Inventario.Vistas
         ModeloProveedores proveedor;
         ControladorProveedores Cproveedor;
         private Form formularioAnterior;
+        FormularioProveedores formularioProveedores;
         public FormularioAgregarProveedor(Form formularioAnterior)
         {
             InitializeComponent();
             this.formularioAnterior = formularioAnterior;
             proveedor = new ModeloProveedores();
             Cproveedor = new ControladorProveedores();
+            formularioProveedores = formularioAnterior as FormularioProveedores;
         }
         public FormularioAgregarProveedor(Form formularioAnterior, int ID, string nombre, long telefono, string direccion, string correo)
         {
             InitializeComponent();
             this.formularioAnterior = formularioAnterior;
+            formularioProveedores = formularioAnterior as FormularioProveedores;
             proveedor = new ModeloProveedores();
             proveedor.ID = ID;
             proveedor.Nombre = nombre;
@@ -39,11 +42,14 @@ namespace Inventario.Vistas
 
             txtNombre.Text = nombre;
             txtTelefono.Text = telefono.ToString();
+            txtDireccion.Text = direccion;
+            txtCorreo.Text = correo;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             formularioAnterior.Show();
+            formularioProveedores.CargarTabla();
             this.Close();
         }
 
@@ -59,6 +65,7 @@ namespace Inventario.Vistas
                 Cproveedor.ActualizarProveedor(proveedor);
 
             formularioAnterior.Show();
+            formularioProveedores.CargarTabla();
             this.Close();
         }
 

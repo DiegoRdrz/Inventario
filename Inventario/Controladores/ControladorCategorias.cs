@@ -15,7 +15,7 @@ namespace Inventario.Controladores
 
         public ControladorCategorias()
         {
-            db = new BD("localhost", "3306", "inventario", "root", "1234");
+            db = new BD("localhost", "3306", "inventario", "root", "");
 
         }
 
@@ -46,6 +46,16 @@ namespace Inventario.Controladores
         public void EliminarCategoria(int ID)
         {
             db.EliminarRegistro("categorias", ID);
+        }
+
+        public int buscarPorNombre(string nombre)
+        {
+            return db.ObtenerCategoriaPorNombre(nombre);
+        }
+
+        public List<string> obtenerNombres()
+        {
+            return db.ObtenerNombresCategorias();
         }
     }
 }

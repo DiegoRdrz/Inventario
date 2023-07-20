@@ -112,6 +112,7 @@
             this.Name = "FormularioClientes";
             this.Text = "Clientes";
             this.Load += new System.EventHandler(this.FormularioClientes_Load);
+            this.Shown += new System.EventHandler(this.FormularioCategorias_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

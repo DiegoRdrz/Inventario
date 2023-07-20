@@ -65,6 +65,7 @@
             this.Name = "FormularioVender";
             this.Text = "FormularioVender";
             this.Load += new System.EventHandler(this.FormularioVender_Load);
+            this.Shown += new System.EventHandler(this.FormularioVender_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

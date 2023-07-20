@@ -14,7 +14,7 @@ namespace Inventario.Controladores
 
         public ControladorProveedores()
         {
-            db = new BD("localhost", "3306", "inventario", "root", "1234");
+            db = new BD("localhost", "3306", "inventario", "root", "");
         }
 
         public void CrearProveedor(ModeloProveedores proveedor)
@@ -47,6 +47,16 @@ namespace Inventario.Controladores
         public void EliminarCliente(int ID)
         {
             db.EliminarRegistro("proveedores", ID);
+        }
+
+        public int buscarPorNombre(string nombre)
+        {
+            return db.ObtenerProveedorPorNombre(nombre);
+        }
+
+        public List<string> obtenerNombres()
+        {
+            return db.ObtenerNombresProveedores();
         }
     }
 }

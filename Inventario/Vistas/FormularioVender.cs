@@ -12,6 +12,7 @@ namespace Inventario.Vistas
 {
     public partial class FormularioVender : Form
     {
+        public PrincipalFormulario PrincipalFormulario { get; set; }
         public FormularioVender()
         {
             InitializeComponent();
@@ -24,7 +25,18 @@ namespace Inventario.Vistas
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            PrincipalFormulario.restaurarColorBtns(1);
             this.Close();
         }
+
+        private void FormularioVender_Shown(object sender, EventArgs e)
+        {
+            CargarTabla();
+        }
+        public void CargarTabla()
+        {
+            //No hace nada de momento
+        }
+
     }
 }

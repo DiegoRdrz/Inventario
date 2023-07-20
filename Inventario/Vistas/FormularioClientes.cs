@@ -29,24 +29,14 @@ namespace Inventario.Vistas
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            PrincipalFormulario.restaurarColorBtns(5);
             this.Close();
+
         }
 
         private void FormularioClientes_Load(object sender, EventArgs e)
         {
-            ControladorClientes Cclientes = new ControladorClientes();
-
-            DataTable Tclientes = Cclientes.MostrarClientes();
-            dgvClientes.DataSource = Tclientes;
-
-            foreach (DataGridViewColumn columna in dgvClientes.Columns)
-            {
-                columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            }
-
-            dgvClientes.ReadOnly = true;
-            dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvClientes.ClearSelection();
+            CargarTabla();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -79,6 +69,30 @@ namespace Inventario.Vistas
                 ControladorClientes Ccliente = new ControladorClientes();
                 Ccliente.EliminarCliente(ID);
             }
+            CargarTabla();
+        }
+
+        private void FormularioCategorias_Shown(object sender, EventArgs e)
+        {
+            CargarTabla();
+        }
+
+
+        public void CargarTabla()
+        {
+                ControladorClientes Cclientes = new ControladorClientes();
+
+                DataTable Tclientes = Cclientes.MostrarClientes();
+                dgvClientes.DataSource = Tclientes;
+
+                foreach (DataGridViewColumn columna in dgvClientes.Columns)
+                {
+                    columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                }
+
+                dgvClientes.ReadOnly = true;
+                dgvClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                dgvClientes.ClearSelection();
         }
     }
 }

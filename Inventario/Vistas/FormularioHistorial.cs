@@ -12,6 +12,7 @@ namespace Inventario.Vistas
 {
     public partial class FormularioHistorial : Form
     {
+        public PrincipalFormulario PrincipalFormulario { get; set; }
         public FormularioHistorial()
         {
             InitializeComponent();
@@ -19,7 +20,26 @@ namespace Inventario.Vistas
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
+            PrincipalFormulario.restaurarColorBtns(6);
             this.Close();
+
+        }
+
+        private void FormularioHistorial_Shown(object sender, EventArgs e)
+        {
+            CargarTabla();
+        }
+
+        public void CargarTabla()
+        {
+
+                //nada de momento
+            
+        }
+
+        private void FormularioHistorial_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
