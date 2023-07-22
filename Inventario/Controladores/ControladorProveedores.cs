@@ -51,12 +51,17 @@ namespace Inventario.Controladores
 
         public int buscarPorNombre(string nombre)
         {
-            return db.ObtenerProveedorPorNombre(nombre);
+            return db.ObtenerIdPorNombre("proveedores", nombre);
         }
 
         public List<string> obtenerNombres()
         {
-            return db.ObtenerNombresProveedores();
+            return db.ObtenerNombres("proveedores");
+        }
+
+        public string obtenerNombrePorID(int id)
+        {
+            return db.ObtenerNombrePorID("proveedores", id);
         }
     }
 }

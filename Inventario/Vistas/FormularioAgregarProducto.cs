@@ -53,10 +53,8 @@ namespace Inventario.Vistas
             txtCantidad.Text = cantidad.ToString();
             txtCodigoBarras.Text = codigoBarras;
 
-            ControladorCategorias Ccategoria = new ControladorCategorias();
-            ControladorProveedores Cproveedores = new ControladorProveedores();
-            cbxCategoria.DataSource = Ccategoria.obtenerNombres();
-            cbxCategoria.DataSource = Cproveedores.obtenerNombres();
+            cbxCategoria.Text = categoriaID.ToString();
+            cbxProveedor.Text = ProveedorID.ToString();
 
         }
 

@@ -14,11 +14,11 @@ namespace Inventario
         private string cadenaConexion;
         private MySqlConnection conexion;
 
-public BD(string servidor, string puerto, string baseDeDatos, string usuario, string contraseña)
-{
-    cadenaConexion = $"Server={servidor};Port={puerto};Database={baseDeDatos};Uid={usuario};Pwd={contraseña};";
-    conexion = new MySqlConnection(cadenaConexion);
-}
+        public BD(string servidor, string puerto, string baseDeDatos, string usuario, string contraseña)
+        {
+            cadenaConexion = $"Server={servidor};Port={puerto};Database={baseDeDatos};Uid={usuario};Pwd={contraseña};";
+            conexion = new MySqlConnection(cadenaConexion);
+        }
 
 
         public void CrearRegistro(string tabla, Dictionary<string, object> valores)
@@ -74,7 +74,20 @@ public BD(string servidor, string puerto, string baseDeDatos, string usuario, st
         {
             try
             {
-                string consulta = $"SELECT * FROM {tabla}";
+                string consulta = "";
+
+                if (tabla == "productos")
+                {
+                    consulta = @"
+                    SELECT p.* , pro.Nombre as Proveedor, cat.Nombre as Categoria
+                    FROM productos p
+                    JOIN proveedores pro ON pro.ID = p.ProveedorID
+                    JOIN categorias cat ON cat.ID = p.CategoriaID";
+                }
+                else
+                {
+                    consulta = $"SELECT * FROM {tabla}";
+                }
 
                 using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                 {
@@ -91,6 +104,7 @@ public BD(string servidor, string puerto, string baseDeDatos, string usuario, st
                 return null;
             }
         }
+
 
         public void ActualizarRegistro(string tabla, int id, Dictionary<string, object> valores)
         {
@@ -158,80 +172,14 @@ public BD(string servidor, string puerto, string baseDeDatos, string usuario, st
 
 
         #region Consultas Personalizadas
-        public List<string> ObtenerNombresProveedores()
+
+        public List<string> ObtenerNombres(string nombreTabla)
         {
-            List<string> nombresProveedores = new List<string>();
+            List<string> nombres = new List<string>();
 
             try
             {
-                string consulta = "SELECT Nombre FROM proveedores";
-                using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
-                {
-                    conexion.Open();
-                    using (MySqlDataReader lector = comando.ExecuteReader())
-                    {
-                        
-                        while (lector.Read())
-                        {
-                            string nombreProveedor = lector["Nombre"].ToString();
-                            nombresProveedores.Add(nombreProveedor);
-                        }
-                        
-                    }
-                    conexion.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                // Manejo de excepciones, puedes mostrar un mensaje de error, log, etc.
-                MessageBox.Show($"Error al obtener nombres de proveedores: {ex.Message}", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            return nombresProveedores;
-        }
-
-
-        public int ObtenerProveedorPorNombre(string nombreProveedor)
-        {
-            int idProveedor = -1; // Valor por defecto en caso de que no se encuentre el proveedor
-
-            try
-            {
-                string consulta = "SELECT ID FROM proveedores WHERE Nombre = @nombre";
-                using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
-                {
-                    conexion.Open();
-                    comando.Parameters.AddWithValue("@nombre", nombreProveedor);
-
-                    object result = comando.ExecuteScalar();
-
-                    if (result != null)
-                    {
-                        idProveedor = Convert.ToInt32(result);
-                    }
-
-                    conexion.Close();
-                }
-            }
-            catch (Exception ex)
-            {
-                // Manejo de excepciones, puedes mostrar un mensaje de error, log, etc.
-                MessageBox.Show($"Error al obtener ID del proveedor por nombre: {ex.Message}", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            return idProveedor;
-        }
-
-
-
-
-        public List<string> ObtenerNombresCategorias()
-        {
-            List<string> nombresCategorias = new List<string>();
-
-            try
-            {
-                string consulta = "SELECT Nombre FROM categorias";
+                string consulta = $"SELECT Nombre FROM {nombreTabla}";
                 using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                 {
                     conexion.Open();
@@ -239,8 +187,8 @@ public BD(string servidor, string puerto, string baseDeDatos, string usuario, st
                     {
                         while (lector.Read())
                         {
-                            string nombreProveedor = lector["Nombre"].ToString();
-                            nombresCategorias.Add(nombreProveedor);
+                            string nombre = lector["Nombre"].ToString();
+                            nombres.Add(nombre);
                         }
                     }
                     conexion.Close();
@@ -249,28 +197,28 @@ public BD(string servidor, string puerto, string baseDeDatos, string usuario, st
             catch (Exception ex)
             {
                 // Manejo de excepciones, puedes mostrar un mensaje de error, log, etc.
-                MessageBox.Show($"Error al obtener nombres de categorias: {ex.Message}", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al obtener nombres de la tabla {nombreTabla}: {ex.Message}", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            return nombresCategorias;
+            return nombres;
         }
-        public int ObtenerCategoriaPorNombre(string nombreCategoria)
+        public int ObtenerIdPorNombre(string nombreTabla, string valorNombre)
         {
-            int idCategoria = -1; // Valor por defecto en caso de que no se encuentre el proveedor
+            int idValor = -1;
 
             try
             {
-                string consulta = "SELECT ID FROM categorias WHERE Nombre = @nombre";
+                string consulta = $"SELECT ID FROM {nombreTabla} WHERE Nombre = @valorNombre";
                 using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
                 {
                     conexion.Open();
-                    comando.Parameters.AddWithValue("@nombre", nombreCategoria);
+                    comando.Parameters.AddWithValue("@valorNombre", valorNombre);
 
                     object result = comando.ExecuteScalar();
 
-                    if (result != null)
+                    if (result != null && result != DBNull.Value)
                     {
-                        idCategoria = Convert.ToInt32(result);
+                        idValor = Convert.ToInt32(result);
                     }
 
                     conexion.Close();
@@ -279,11 +227,45 @@ public BD(string servidor, string puerto, string baseDeDatos, string usuario, st
             catch (Exception ex)
             {
                 // Manejo de excepciones, puedes mostrar un mensaje de error, log, etc.
-                MessageBox.Show($"Error al obtener ID del proveedor por nombre: {ex.Message}", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error al obtener ID por nombre: {ex.Message}", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            return idCategoria;
+            return idValor;
         }
-        #endregion
+
+        public string ObtenerNombrePorID(string tabla, int id)
+        {
+            string nombre = string.Empty;
+
+            try
+            {
+                string consulta = $"SELECT Nombre FROM {tabla} WHERE ID = @id";
+                using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@id", id);
+
+                    conexion.Open();
+                    object resultado = comando.ExecuteScalar();
+
+                    if (resultado != null && resultado != DBNull.Value)
+                    {
+                        nombre = resultado.ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones, puedes mostrar un mensaje de error, log, etc.
+                MessageBox.Show($"Error al obtener el nombre por ID en la tabla {tabla}: {ex.Message}", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return nombre;
+        }
     }
+    #endregion
 }
+

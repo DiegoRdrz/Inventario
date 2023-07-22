@@ -42,7 +42,6 @@ namespace Inventario.Vistas
         public void CargarTabla()
         {
             ControladorProductos Cproducto = new ControladorProductos();
-
             DataTable Tproductos = Cproducto.MostrarProductos();
             dgvProductos.DataSource = Tproductos;
 
@@ -51,12 +50,14 @@ namespace Inventario.Vistas
                 columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             }
 
+            dgvProductos.Columns["ProveedorID"].Visible = false;
+            dgvProductos.Columns["CategoriaID"].Visible = false;
             dgvProductos.ReadOnly = true;
             dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvProductos.ClearSelection();
             dgvProductos.AllowUserToAddRows = false;
-
         }
+
 
         private void FormularioInventario_Load(object sender, EventArgs e)
         {
@@ -100,5 +101,7 @@ namespace Inventario.Vistas
             }
             CargarTabla();
         }
+
+
     }
 }
