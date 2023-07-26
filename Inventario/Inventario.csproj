@@ -159,6 +159,12 @@
     <Compile Include="Vistas\FormularioVender.Designer.cs">
       <DependentUpon>FormularioVender.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\FormularioVerVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\FormularioVerVenta.Designer.cs">
+      <DependentUpon>FormularioVerVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\PrincipalFormulario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\FormularioVender.resx">
       <DependentUpon>FormularioVender.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\FormularioVerVenta.resx">
+      <DependentUpon>FormularioVerVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\PrincipalFormulario.resx">
       <DependentUpon>PrincipalFormulario.cs</DependentUpon>

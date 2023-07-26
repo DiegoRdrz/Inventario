@@ -31,8 +31,7 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblVentas = new System.Windows.Forms.Label();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.dgvLista = new System.Windows.Forms.DataGridView();
             this.dgvBuscar = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -41,6 +40,8 @@
             this.btnTerminar = new System.Windows.Forms.Button();
             this.lblTituloTotal = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.lblBuscar = new System.Windows.Forms.Label();
+            this.lblCompra = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscar)).BeginInit();
             this.SuspendLayout();
@@ -75,26 +76,18 @@
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
             // 
-            // btnBuscar
+            // txtBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(841, 56);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 3;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(680, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtBuscar.Location = new System.Drawing.Point(770, 59);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(146, 20);
+            this.txtBuscar.TabIndex = 4;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // dgvLista
             // 
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLista.Location = new System.Drawing.Point(12, 247);
+            this.dgvLista.Location = new System.Drawing.Point(12, 278);
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.Size = new System.Drawing.Size(925, 271);
             this.dgvLista.TabIndex = 5;
@@ -104,7 +97,7 @@
             this.dgvBuscar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBuscar.Location = new System.Drawing.Point(12, 128);
             this.dgvBuscar.Name = "dgvBuscar";
-            this.dgvBuscar.Size = new System.Drawing.Size(925, 67);
+            this.dgvBuscar.Size = new System.Drawing.Size(925, 96);
             this.dgvBuscar.TabIndex = 6;
             // 
             // btnAgregar
@@ -115,11 +108,12 @@
             this.btnAgregar.TabIndex = 7;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // cbxClientes
             // 
             this.cbxClientes.FormattingEnabled = true;
-            this.cbxClientes.Location = new System.Drawing.Point(498, 58);
+            this.cbxClientes.Location = new System.Drawing.Point(543, 59);
             this.cbxClientes.Name = "cbxClientes";
             this.cbxClientes.Size = new System.Drawing.Size(121, 21);
             this.cbxClientes.TabIndex = 8;
@@ -127,7 +121,7 @@
             // lblClientes
             // 
             this.lblClientes.AutoSize = true;
-            this.lblClientes.Location = new System.Drawing.Point(431, 61);
+            this.lblClientes.Location = new System.Drawing.Point(476, 62);
             this.lblClientes.Name = "lblClientes";
             this.lblClientes.Size = new System.Drawing.Size(39, 13);
             this.lblClientes.TabIndex = 9;
@@ -141,12 +135,13 @@
             this.btnTerminar.TabIndex = 10;
             this.btnTerminar.Text = "Terminar Venta";
             this.btnTerminar.UseVisualStyleBackColor = true;
+            this.btnTerminar.Click += new System.EventHandler(this.btnTerminar_Click);
             // 
             // lblTituloTotal
             // 
             this.lblTituloTotal.AutoSize = true;
             this.lblTituloTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloTotal.Location = new System.Drawing.Point(754, 525);
+            this.lblTituloTotal.Location = new System.Drawing.Point(760, 552);
             this.lblTituloTotal.Name = "lblTituloTotal";
             this.lblTituloTotal.Size = new System.Drawing.Size(66, 25);
             this.lblTituloTotal.TabIndex = 11;
@@ -156,11 +151,30 @@
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(841, 525);
+            this.lblTotal.Location = new System.Drawing.Point(847, 552);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(24, 25);
             this.lblTotal.TabIndex = 12;
             this.lblTotal.Text = "0";
+            // 
+            // lblBuscar
+            // 
+            this.lblBuscar.AutoSize = true;
+            this.lblBuscar.Location = new System.Drawing.Point(709, 62);
+            this.lblBuscar.Name = "lblBuscar";
+            this.lblBuscar.Size = new System.Drawing.Size(46, 13);
+            this.lblBuscar.TabIndex = 13;
+            this.lblBuscar.Text = "Buscar: ";
+            // 
+            // lblCompra
+            // 
+            this.lblCompra.AutoSize = true;
+            this.lblCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCompra.Location = new System.Drawing.Point(12, 250);
+            this.lblCompra.Name = "lblCompra";
+            this.lblCompra.Size = new System.Drawing.Size(87, 25);
+            this.lblCompra.TabIndex = 14;
+            this.lblCompra.Text = "Compra";
             // 
             // FormularioVender
             // 
@@ -168,6 +182,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(949, 615);
+            this.Controls.Add(this.lblCompra);
+            this.Controls.Add(this.lblBuscar);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblTituloTotal);
             this.Controls.Add(this.btnTerminar);
@@ -176,8 +192,7 @@
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvBuscar);
             this.Controls.Add(this.dgvLista);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.lblVentas);
             this.Controls.Add(this.btnCerrar);
@@ -185,7 +200,6 @@
             this.Name = "FormularioVender";
             this.Text = "FormularioVender";
             this.Load += new System.EventHandler(this.FormularioVender_Load);
-            this.Shown += new System.EventHandler(this.FormularioVender_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBuscar)).EndInit();
             this.ResumeLayout(false);
@@ -198,8 +212,7 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label lblVentas;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.DataGridView dgvLista;
         private System.Windows.Forms.DataGridView dgvBuscar;
         private System.Windows.Forms.Button btnAgregar;
@@ -208,5 +221,7 @@
         private System.Windows.Forms.Button btnTerminar;
         private System.Windows.Forms.Label lblTituloTotal;
         private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label lblBuscar;
+        private System.Windows.Forms.Label lblCompra;
     }
 }

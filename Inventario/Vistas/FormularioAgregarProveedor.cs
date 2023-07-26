@@ -69,6 +69,9 @@ namespace Inventario.Vistas
             this.Close();
         }
 
+        private void FormularioAgregarProveedor_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

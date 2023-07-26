@@ -154,6 +154,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormularioAgregarProveedor";
             this.Text = "FormularioAgregarProveedor";
+            this.Load += new System.EventHandler(this.FormularioAgregarProveedor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

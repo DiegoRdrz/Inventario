@@ -25,12 +25,12 @@ namespace Inventario.Controladores
             valores.Add("Fecha", venta.Fecha);
             valores.Add("Total", venta.Total);
 
-            db.CrearRegistro("Venta", valores);
+            db.CrearRegistro("ventas", valores);
         }
 
         public DataTable MostrarVentas()
         {
-            return db.LeerRegistros("Venta");
+            return db.LeerRegistros("ventas");
         }
 
         public void ActualizarVenta(ModeloVentas venta)
@@ -40,12 +40,17 @@ namespace Inventario.Controladores
             valores.Add("Fecha", venta.Fecha);
             valores.Add("Total", venta.Total);
 
-            db.ActualizarRegistro("Venta", venta.ID, valores);
+            db.ActualizarRegistro("ventas", venta.ID, valores);
         }
 
         public void EliminarVenta(int ventaID)
         {
-            db.EliminarRegistro("Venta", ventaID);
+            db.EliminarRegistro("ventas", ventaID);
+        }
+
+        public int obtenerUltimoId()
+        {
+            return db.ObtenerUltimoID("ventas");
         }
     }
 }

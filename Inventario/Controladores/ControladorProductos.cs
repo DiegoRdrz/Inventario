@@ -50,7 +50,34 @@ namespace Inventario.Controladores
 
         public void EliminarProducto(int ID)
         {
-            db.EliminarRegistro("producto", ID);
+            db.EliminarRegistro("productos", ID);
         }
+
+        public DataTable buscarPorNombre(string nombre)
+        {
+            return db.BuscarPorNombre("productos",nombre);
+        }
+
+        public void CrearProductoVendido(int venta, int producto, int cantidad)
+        {
+            Dictionary<string, object> valores = new Dictionary<string, object>();
+            valores.Add("VentaID", venta);
+            valores.Add("ProductoID", producto);
+            valores.Add("Cantidad", cantidad);
+
+            db.CrearRegistro("productosvendidos", valores);
+        }
+
+        public DataTable mostrarProductosVendidos(int id)
+        {
+            return db.mostrarProductosVendidos(id);
+        }
+
+        public void restarCantidad(int id, int cantidad)
+        {
+            db.RestarCantidad(id,cantidad);
+        }
+
+
     }
 }

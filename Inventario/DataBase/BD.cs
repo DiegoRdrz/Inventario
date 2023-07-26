@@ -84,6 +84,13 @@ namespace Inventario
                     JOIN proveedores pro ON pro.ID = p.ProveedorID
                     JOIN categorias cat ON cat.ID = p.CategoriaID";
                 }
+                else if(tabla == "ventas")
+                {
+                    consulta = @"
+                    SELECT v.* , cli.Nombre as Cliente
+                    FROM ventas v
+                    JOIN clientes cli ON cli.ID = v.ClienteID";
+                }
                 else
                 {
                     consulta = $"SELECT * FROM {tabla}";
@@ -185,6 +192,7 @@ namespace Inventario
                     conexion.Open();
                     using (MySqlDataReader lector = comando.ExecuteReader())
                     {
+                        nombres.Insert(0, "Seleccionar...");
                         while (lector.Read())
                         {
                             string nombre = lector["Nombre"].ToString();
@@ -265,6 +273,127 @@ namespace Inventario
 
             return nombre;
         }
+
+        public DataTable BuscarPorNombre(string tabla, string nombre)
+        {
+            DataTable resultado = new DataTable();
+            string consulta;
+            try
+            {
+                consulta = $@"
+                SELECT p.*, pro.Nombre as Proveedor, cat.Nombre as Categoria
+                FROM {tabla} p 
+                JOIN proveedores pro ON pro.ID = p.ProveedorID
+                JOIN categorias cat ON cat.ID = p.CategoriaID
+                WHERE p.Nombre LIKE @nombre";
+
+
+
+                using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
+
+                    conexion.Open();
+                    using (MySqlDataAdapter adaptador = new MySqlDataAdapter(comando))
+                    {
+                        adaptador.Fill(resultado);
+                    }
+                    conexion.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones, puedes mostrar un mensaje de error, log, etc.
+                MessageBox.Show($"Error al realizar la búsqueda: {ex.Message}", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return resultado;
+        }
+
+        public int ObtenerUltimoID(string tabla)
+        {
+            int ultimoID = -1; // Valor por defecto en caso de que no se pueda obtener el ID
+
+            try
+            {
+                string consulta = $"SELECT MAX(ID) FROM {tabla}";
+                using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
+                {
+                    conexion.Open();
+                    object resultado = comando.ExecuteScalar();
+
+                    if (resultado != null && resultado != DBNull.Value)
+                    {
+                        ultimoID = Convert.ToInt32(resultado);
+                    }
+
+                    conexion.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al obtener el último ID de la tabla {tabla}: {ex.Message}", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return ultimoID;
+        }
+
+        public void RestarCantidad(int idProducto, int cantidadVendida)
+        {
+            try
+            {
+                string consulta = "UPDATE productos SET Cantidad = Cantidad - @cantidadVendida WHERE ID = @idProducto";
+
+                using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@cantidadVendida", cantidadVendida);
+                    comando.Parameters.AddWithValue("@idProducto", idProducto);
+
+                    conexion.Open();
+                    comando.ExecuteNonQuery();
+                    conexion.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones, puedes mostrar un mensaje de error, log, etc.
+                MessageBox.Show($"Error al restar la cantidad en stock: {ex.Message}", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public DataTable mostrarProductosVendidos(int idVenta)
+        {
+            DataTable productosVendidos = new DataTable();
+
+            try
+            {
+                string consulta = @"
+                SELECT pv.*, pro.Nombre AS Producto
+                FROM productosvendidos pv
+                JOIN productos pro ON pro.ID = pv.ProductoID
+                WHERE VentaID = @idVenta";
+                using (MySqlCommand comando = new MySqlCommand(consulta, conexion))
+                {
+                    comando.Parameters.AddWithValue("@idVenta", idVenta);
+
+                    conexion.Open();
+
+                    MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
+                    adaptador.Fill(productosVendidos);
+
+                    conexion.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones, puedes mostrar un mensaje de error, log, etc.
+                MessageBox.Show($"Error al obtener productos vendidos por idVenta: {ex.Message}", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return productosVendidos;
+        }
+
+
     }
     #endregion
 }

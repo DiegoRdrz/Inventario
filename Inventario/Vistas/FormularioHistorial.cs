@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Inventario.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,14 +33,46 @@ namespace Inventario.Vistas
 
         public void CargarTabla()
         {
+            ControladorVentas Cventa = new ControladorVentas();
 
-                //nada de momento
-            
+            DataTable Tventa = Cventa.MostrarVentas();
+            dgvVentas.DataSource = Tventa;
+
+            foreach (DataGridViewColumn columna in dgvVentas.Columns)
+            {
+                columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            }
+
+            dgvVentas.Columns["CLienteID"].Visible = false;
+
+            dgvVentas.ReadOnly = true;
+            dgvVentas.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvVentas.ClearSelection();
+            dgvVentas.AllowUserToAddRows = false;
+
         }
 
         private void FormularioHistorial_Load(object sender, EventArgs e)
         {
+            CargarTabla();
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dgvVentas.SelectedRows.Count > 0)
+            {
+                DataGridViewRow filaSeleccionada = dgvVentas.SelectedRows[0];
+
+                // Obtener los valores de las celdas
+                int ID = int.Parse(filaSeleccionada.Cells["ID"].Value.ToString());
+
+                // Obtener los demás valores de las celdas
+
+                {
+                    PrincipalFormulario.abrirFormularioCrear(new FormularioVerVenta(this, ID));
+                }
+
+            }
         }
     }
 }

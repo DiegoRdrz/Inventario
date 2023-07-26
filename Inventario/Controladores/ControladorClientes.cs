@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Runtime.Remoting;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -45,5 +46,16 @@ namespace Inventario.Controladores
         {
             db.EliminarRegistro("clientes", ID);
         }
+
+        public List<string> obtenerNombres()
+        {
+            return db.ObtenerNombres("clientes");
+        }
+
+        public int BuscarIdPorNombre(string nombre)
+        {
+            return db.ObtenerIdPorNombre("clientes", nombre);
+        }
+
     }
 }

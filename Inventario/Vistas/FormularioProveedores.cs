@@ -14,9 +14,11 @@ namespace Inventario.Vistas
     public partial class FormularioProveedores : Form
     {
         public PrincipalFormulario PrincipalFormulario { get; set; }
+        ControladorProveedores Cproveedor;
         public FormularioProveedores()
         {
             InitializeComponent();
+            Cproveedor = new ControladorProveedores();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -82,10 +84,7 @@ namespace Inventario.Vistas
 
         public void CargarTabla()
         {
-
-                ControladorProveedores Cproveedores = new ControladorProveedores();
-
-                DataTable Tproveedores = Cproveedores.MostrarProveedores();
+                DataTable Tproveedores = Cproveedor.MostrarProveedores();
                 dgvProveedores.DataSource = Tproveedores;
 
                 foreach (DataGridViewColumn columna in dgvProveedores.Columns)
